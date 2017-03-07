@@ -19,4 +19,7 @@ dependencies {
 
     // Biblioteka zewnętrzna - za pierwszym razem będzie ściągnięta z repozytorium Maven Central, potem już będzie brana z lokalnego dysku.
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'    
+    
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.5'
+  	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.5'
 }
