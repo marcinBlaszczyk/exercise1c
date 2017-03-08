@@ -16,19 +16,19 @@ public class ArrayConverter {
 	
 	
     public int[] convertToInts(String[] strings) {
-    	log.info("convertToInts method with param strings ={");
+    	log.debug("convertToInts method with param strings ={");
     	for(String value: strings){
-    		log.info(value+", ");
+    		log.debug(value+", ");
     	}
-    	log.info("}");
+    	log.debug("}");
     	
         int[] result = Arrays.stream(strings).mapToInt(Integer::valueOf).toArray();
         
-        log.info("Return of the method {");
+        log.debug("Return of the method {");
     	for(int value: result){
-    		log.info(value+", ");
+    		log.debug(value+", ");
     	}
-        log.info("}");
+        log.debug("}");
         return result;
     }
 }
