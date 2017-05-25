@@ -1,25 +1,24 @@
-// Importuje wtyczkę, która umożliwia Gradle'owi uruchamianie zbudowanych aplikacji Java
+// Importuje wtyczkÄ™, ktĂłra umoĹĽliwia Gradle'owi uruchamianie zbudowanych aplikacji Java
 apply plugin: 'application'
 
-// Nazwa klasy, która stanowi punkt wejścia do aplikacji
+// Nazwa klasy, ktĂłra stanowi punkt wejĹ›cia do aplikacji
 mainClassName = "wdsr.exercise1.Main"
 
 run {
-	// Jeśli przy uruchomieniu zadania "run" podano argument "exec.args" (-Dexec.args=...)
+	// Jesli przy uruchomieniu zadania "run" podano argument "exec.args" (-Dexec.args=...)
 	if (System.getProperty("exec.args") != null) {
-		// Przekaż argument exec.args do uruchamianej aplikacji
+		// PrzekaĹĽ argument exec.args do uruchamianej aplikacji
     	args System.getProperty("exec.args").split()
     }
 }
 
-// Definicje zależności
+// Definicje zaleznosci
 dependencies {
 	// Podprojekt "conversions"
     compile project(':conversions')
 
-    // Biblioteka zewnętrzna - za pierwszym razem będzie ściągnięta z repozytorium Maven Central, potem już będzie brana z lokalnego dysku.
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'    
-    
-    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.5'
-  	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.5'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'  
+      
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.5'
 }
